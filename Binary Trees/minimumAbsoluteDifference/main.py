@@ -18,4 +18,6 @@ class Solution:
                 self.mindiff = min(self.mindiff,abs(node.val- self.prev.val))
             self.prev = node
             inOrder(node.right)
+        inOrder(root)
+        return self.mindiff
         

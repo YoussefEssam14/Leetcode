@@ -15,4 +15,9 @@ class Solution:
             if not node:
                 return
             if min_val < node.val < self.result:
-                
+                self.result = node.val
+                return
+            dfs(node.left)
+            dfs(node.right)
+        dfs(root)
+        return self.result if self.result != float('inf') else -1
